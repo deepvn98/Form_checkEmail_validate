@@ -22,6 +22,10 @@ import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 import org.thymeleaf.templatemode.TemplateMode;
+import service.IProvinceService;
+import service.IUserService;
+import service.impl.ProvinceService;
+import service.impl.UserService;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -38,6 +42,17 @@ public class WebConfig implements WebMvcConfigurer, ApplicationContextAware {
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         this.applicationContext = applicationContext;
+    }
+
+//
+    @Bean
+    public IProvinceService provinceService(){
+        return new ProvinceService();
+    }
+
+    @Bean
+    public IUserService userService(){
+        return new UserService();
     }
 
     //Cấu hình Thymleaf

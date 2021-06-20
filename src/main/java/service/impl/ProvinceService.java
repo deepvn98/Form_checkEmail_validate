@@ -31,7 +31,7 @@ public class ProvinceService implements IProvinceService {
 
     @Override
     public void delete(Long id) {
-        provinceRepo.delete(id);
+        provinceRepo.deleteById(id);
 
     }
 }

@@ -32,7 +32,7 @@ public class UserService implements IUserService {
 
     @Override
     public void delete(Long id) {
-        userRepo.delete(id);
+        userRepo.deleteById(id);
 
     }
 }
